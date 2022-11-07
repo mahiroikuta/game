@@ -10,7 +10,8 @@ public class Floor : MonoBehaviour
     {
         if ( collision.gameObject.tag == "Ball" )
         {
-            if ( firstBall ) {
+            if ( firstBall )
+            {
                 firstBall = false;
                 // 座標記録
                 foreach (ContactPoint point in collision.contacts)
@@ -23,9 +24,7 @@ public class Floor : MonoBehaviour
                 Vector3 pos = shooterTransform.position;
                 pos = startPosition;
             }
-        Destroy(collision.gameObject);
-        } else {
-
+            Destroy(collision.gameObject);
         }
     }
     // Start is called before the first frame update

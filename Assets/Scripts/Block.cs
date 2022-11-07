@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class Block : MonoBehaviour
 {
+    [SerializeField]
+    int blockLife;
+
     void OnCollisionEnter(Collision collision)
     {
         if ( collision.gameObject.tag == "Ball" )
         {
-            Destroy(gameObject);
+            blockLife = blockLife-1;
         }
         else if ( collision.gameObject.tag == "Floor" )
         {
             // gameover
+        }
+        if ( blockLife == 0 )
+        {
+            Destroy(gameObject);
         }
     }
     // Start is called before the first frame update
