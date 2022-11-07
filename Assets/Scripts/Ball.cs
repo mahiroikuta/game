@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
-    public float speed = 5f;
+    [SerializeField]
+    float speed = 5f;
+
+    [SerializeField]
     Rigidbody myRigidbody;
     // Start is called before the first frame update
     void Start()
